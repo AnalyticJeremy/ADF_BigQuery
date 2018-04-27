@@ -33,7 +33,7 @@ of the details for this process.  However, to make it easier, I will distill the
 2. In the Google Cloud Platform console, select your project.  Then select "Credentials" from the toolbar on the left side of the screen.
 3. Click the "Create credentials" drop-down and select "OAuth client ID".
 4. For "Application type", select "Web application".
-   - Give the client a name that will allow you to identifiy it later.
+   - Give the client a name that will allow you to identify it later.
    - The "Authorized JavaScript origins" field can be left blank.
    - For "Authorized redirect URIs", you must provide a URL (even if it's a fake URL).  Be sure to make note of the *exact* value that you use (including whether or not you used a trailing slash) because you will use it later.  I recommend you use:  `http://127.0.0.1/`
  5. Click the "Create" button.
@@ -49,9 +49,10 @@ fields in ADF's "New Linked Service" form.
 The tricky part of this process is obtaining a refresh token.  To get the token, you must call the Google authentication service
 REST API to get an access code.  Then you have to pass that access code back to Google to get a refresh token.
 
-To make this process easier, I have written a PowerShell script you can use to do the "OAuth dance" with Google and get a refresh
-token that you can provide to Azure Data Factory.  At the top of the script, just provide values for the `clientId`, `clientSecret`,
-and `redirectUrl` variables.  We got all three of the values in the previous section of this guide.
+To make this process easier, I have written <a href="Google API Auth.ps1">a PowerShell script</a> (which is available in this
+GitHub repo) you can use to do the "OAuth dance" with Google and get a refresh token that you can provide to Azure Data Factory.
+At the top of the script, just provide values for the `clientId`, `clientSecret`, and `redirectUrl` variables.  We got all three
+of the values in the previous section of this guide.
 
 Once you've changed the values, you can run the script in a PowerShell window.  It will open a window showing a Google web page
 asking for your Google credentials.  Log in to Google as you normally would.  In the same window, Google will then ask you to
