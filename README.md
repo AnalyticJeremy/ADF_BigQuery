@@ -2,7 +2,7 @@
 
 ---
 
-**TL;DR Version:**  You need to get a refresh token from Google.  Use <a href="https://raw.githubusercontent.com/AnalyticJeremy/ADF_BigQuery/master/Google%20API%20Auth.ps1">this PowerShell script</a>.
+**TL;DR Version:**  You need to get a refresh token from Google.  Use <a href="https://raw.githubusercontent.com/AnalyticJeremy/ADF_BigQuery/main/Google%20API%20Auth.ps1">this PowerShell script</a>.
 
 ---
 
@@ -58,7 +58,7 @@ fields in ADF's "New Linked Service" form.
 The tricky part of this process is obtaining a refresh token.  To get the token, you must call the Google authentication service
 REST API to get an access code.  Then you have to pass that access code back to Google to get a refresh token.
 
-To make this process easier, I have written <a href="https://raw.githubusercontent.com/AnalyticJeremy/ADF_BigQuery/master/Google%20API%20Auth.ps1">a PowerShell script</a> (which is available in this
+To make this process easier, I have written <a href="https://raw.githubusercontent.com/AnalyticJeremy/ADF_BigQuery/main/Google%20API%20Auth.ps1">a PowerShell script</a> (which is available in this
 GitHub repo) you can use to do the "OAuth dance" with Google and get a refresh token that you can provide to Azure Data Factory.
 At the top of the script, just provide values for the `clientId`, `clientSecret`, and `redirectUrl` variables.  We got all three
 of the values in the previous section of this guide.
